@@ -27,6 +27,8 @@ RUN curl -fSL ${MIRROR_BASE_URL}/${NIFI_BINARY_PATH} -o ${NIFI_BASE_DIR}/nifi-${
     && rm ${NIFI_BASE_DIR}/nifi-${NIFI_VERSION}-bin.zip \
     && mv ${NIFI_BASE_DIR}/nifi-${NIFI_VERSION} ${NIFI_HOME}
 
+RUN mkdir ${NIFI_HOME}/run
+
 EXPOSE 8080 8443 10000 8000
 
 ENTRYPOINT ["sh", "-c", "${NIFI_HOME}/bin/nifi.sh run"]
