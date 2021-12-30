@@ -22,16 +22,16 @@ FROM registry.access.redhat.com/ubi8/openjdk-11:latest
 
 # Download, validate, and expand Apache NiFi binary.
 #RUN curl -fSL ${MIRROR_BASE_URL}/${NIFI_BINARY_PATH} -o ${NIFI_BASE_DIR}/nifi-${NIFI_VERSION}-bin.zip \
-    && echo "$(curl ${BASE_URL}/${NIFI_BINARY_PATH}.sha256) *${NIFI_BASE_DIR}/nifi-${NIFI_VERSION}-bin.zip" | sha256sum -c - \
-    && unzip ${NIFI_BASE_DIR}/nifi-${NIFI_VERSION}-bin.zip -d ${NIFI_BASE_DIR} \
-    && rm ${NIFI_BASE_DIR}/nifi-${NIFI_VERSION}-bin.zip \
-    && mv ${NIFI_BASE_DIR}/nifi-${NIFI_VERSION} ${NIFI_HOME}
+#    && echo "$(curl ${BASE_URL}/${NIFI_BINARY_PATH}.sha256) *${NIFI_BASE_DIR}/nifi-${NIFI_VERSION}-bin.zip" | sha256sum -c - \
+#    && unzip ${NIFI_BASE_DIR}/nifi-${NIFI_VERSION}-bin.zip -d ${NIFI_BASE_DIR} \
+#    && rm ${NIFI_BASE_DIR}/nifi-${NIFI_VERSION}-bin.zip \
+#    && mv ${NIFI_BASE_DIR}/nifi-${NIFI_VERSION} ${NIFI_HOME}
 
 #RUN mkdir ${NIFI_PID_DIR}
 #RUN mkdir ${NIFI_LOG_DIR}
 
 #RUN chgrp -R 0 ${NIFI_HOME} && \
-    chmod -R g=u ${NIFI_HOME} 
+#    chmod -R g=u ${NIFI_HOME} 
 
 #EXPOSE 8080 8443 10000 8000
 
